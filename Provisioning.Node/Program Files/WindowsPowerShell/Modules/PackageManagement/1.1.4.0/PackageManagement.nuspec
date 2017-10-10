@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>PackageManagement</id>
+    <version>1.1.4.0</version>
+    <authors>Microsoft Corporation</authors>
+    <owners>Microsoft Corporation</owners>
+    <projectUrl>https://oneget.org/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>PackageManagement (a.k.a. OneGet) is a new way to discover and install software packages from around the web. 
+ It is a manager or multiplexor of existing package managers (also called package providers) that unifies Windows package management with a single Windows PowerShell interface. With PackageManagement, you can do the following. 
+  - Manage a list of software repositories in which packages can be searched, acquired and installed 
+  - Discover software packages 
+  - Seamlessly install, uninstall, and inventory packages from one or more software repositories</description>
+    <releaseNotes />
+    <copyright>(C) Microsoft Corporation. All rights reserved.</copyright>
+    <tags>PackageManagement PSEdition_Core PSEdition_Desktop Linux Mac PSModule PSIncludes_Cmdlet PSCmdlet_Find-Package PSCmdlet_Get-Package PSCmdlet_Get-PackageProvider PSCmdlet_Get-PackageSource PSCmdlet_Install-Package PSCmdlet_Import-PackageProvider PSCmdlet_Find-PackageProvider PSCmdlet_Install-PackageProvider PSCmdlet_Register-PackageSource PSCmdlet_Set-PackageSource PSCmdlet_Unregister-PackageSource PSCmdlet_Uninstall-Package PSCmdlet_Save-Package PSCommand_Find-Package PSCommand_Get-Package PSCommand_Get-PackageProvider PSCommand_Get-PackageSource PSCommand_Install-Package PSCommand_Import-PackageProvider PSCommand_Find-PackageProvider PSCommand_Install-PackageProvider PSCommand_Register-PackageSource PSCommand_Set-PackageSource PSCommand_Unregister-PackageSource PSCommand_Uninstall-Package PSCommand_Save-Package PSIncludes_DscResource PSDscResource_PackageManagement PSDscResource_PackageManagementSource</tags>
+  </metadata>
+</package>

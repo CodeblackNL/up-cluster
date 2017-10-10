@@ -1,0 +1,6 @@
+Downloads
+Images/**/*.*
+!Images/**/*.md
+#!Images/Drivers/Download.md
+#!Images/Updates/Download.md
+Provisioning.Disk/Images/**
