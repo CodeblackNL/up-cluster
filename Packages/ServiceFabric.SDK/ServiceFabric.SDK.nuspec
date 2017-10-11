@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>ServiceFabric.SDK</id>
+    <version>2.7.198</version>
+    <authors>Codeblack</authors>
+    <owners>Codeblack</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>ServiceFabric.SDK</description>
+    <releaseNotes />
+    <copyright>(c) 2017 Codeblack. All rights reserved.</copyright>
+    <tags>ServiceFabric SDK</tags>
+    <dependencies>
+      <dependency id="ServiceFabric.Runtime" version="[5.7.198.9494]" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="files\**" target="files" />
+  </files>
+</package>

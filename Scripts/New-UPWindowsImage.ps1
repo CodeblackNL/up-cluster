@@ -119,10 +119,10 @@ if (-not $wimSourceFilePath) {
     throw "Source image 'install.wim' not found."
 }
 
-$wimDestinationFolderPath = [System.IO.Path]::GetFullPath((Join-Path -Path $PSScriptRoot -ChildPath '..\Provisioning.Disk\Images'))
+$wimDestinationFolderPath = [System.IO.Path]::GetFullPath((Join-Path -Path $PSScriptRoot -ChildPath '..\Files.Disk\Provisioning\Images'))
 $driversPath = [System.IO.Path]::GetFullPath((Join-Path -path $PSScriptRoot -ChildPath '..\Images\Drivers'))
 $updatesFolderPath = [System.IO.Path]::GetFullPath((Join-Path -Path $PSScriptRoot -ChildPath '..\Images\Updates'))
-$filesPath = [System.IO.Path]::GetFullPath((Join-Path -path $PSScriptRoot -ChildPath '..\Provisioning.Node'))
+$filesPath = [System.IO.Path]::GetFullPath((Join-Path -path $PSScriptRoot -ChildPath '..\Files.Node'))
 
 $updates = (Get-ChildItem -Path $updatesFolderPath -File | Where-Object { $_.Name -notmatch '\.md' }).FullName
 

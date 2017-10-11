@@ -1,0 +1,121 @@
+﻿.\config.cmd --unattended --url http://upvm-tfs/ --auth Integrated --pool default --agent agent1 --runasservice --windowslogonaccount UPLAB\sa-build --windowslogonpassword P@ssw0rd!
+.\config.cmd --unattended --url http://upvm-tfs/ --auth Integrated --pool default --agent agent1 --runasservice
+
+>> Connect:
+
+Connecting to server ...
+
+>> Register Agent:
+
+Scanning for tool capabilities.
+Connecting to the server.
+Successfully added the agent
+Testing agent connection.
+2017-08-16 13:26:38Z: Settings Saved.
+Service vstsagent.upvm-tfs.agent1 successfully installed
+Service vstsagent.upvm-tfs.agent1 successfully set recovery option
+Service vstsagent.upvm-tfs.agent1 successfully configured
+Service vstsagent.upvm-tfs.agent1 started successfully
+
+PS C:\agent> .\config.cmd --help
+Visual Studio Team Services Agent
+Copyright (c) Microsoft Corporation
+
+Run the agent using the convenience cmd or shell script wrappers.
+
+Print agent version information:
+Win  : .\config.cmd --version and config.cmd --commit
+Unix : ./config.sh --version and ./config.sh --commit
+
+Display command line help:
+Win  : .\config.cmd --help
+Unix : ./config.sh --help
+
+Configure the agent and exit:
+Win  : .\config.cmd [arguments] [options]
+Unix : ./config.sh [arguments] [options]
+
+Unconfigure the agent:
+Win  : .\config.cmd remove
+Unix : ./config.sh remove
+
+Run agent interactively (must be configured):
+Win  : .\run.cmd [arguments] [options]
+Unix : ./run.sh [arguments] [options]
+
+
+Configure Arguments:
+-----------------------------------------------------------------------------
+--url                  URL of the server.  Examples:
+                       https://myaccount.visualstudio.com or http://onprem:8080/tfs
+--auth                 Authentication type. Valid options are PAT (Personal Access Token),
+                       Negotiate (Kerberos or NTLM) and Integrated (Windows default credentials)
+--pool                 Pool name for agent to join
+--agent                Agent name
+--work                 Work directory where job data is stored.
+                       Defaults to _work under the root of the agent directory.
+                       Work directory is owned by a given agent and should not share between multiple agents.
+--windowslogonaccount  Windows logon account name if runasservice option is chosen (Only on Windows)
+--windowslogonpassword Windows logon account password if runasservice option is chosen (Only on Windows)
+
+
+Remove Arguments:
+-----------------------------------------------------------------------------
+--auth                 Authentication type. Valid options are PAT (Personal Access Token),
+                       Negotiate (Kerberos or NTLM) and Integrated (Windows default credentials)
+
+
+Options:
+-----------------------------------------------------------------------------
+--unattended     Unattended config. You will not be prompted.
+                 All answers must be supplied to the command line.
+--acceptteeeula  Accept TEE end user license agreement. (Only on Linux and OSX)
+--replace        Replace the agent in a pool. If another agent is listening
+                 by that name, or it will start failing with a conflict.
+--runasservice   Configure the agent as service. (Only on Windows, need administrator permission to configure windows service)
+
+
+Arguments by Auth Type:
+-----------------------------------------------------------------------------
+PAT:
+--token        Personal Access Token data. Best to paste value in.
+
+Negotiate:
+--username     domain\username or UPN
+--password     windows account password
+
+Integrated: does not take any additional arguments
+
+
+Unattended configure and unconfigure examples:
+-----------------------------------------------------------------------------
+Remember to check return code when using unattended configuration
+Unattend configuration for VSTS with PAT authentication
+Win  : .\config.cmd --unattended --url https://myaccount.visualstudio.com --auth PAT --token <token> --pool default --agent myagent
+Unix : ./config.sh --unattended --acceptteeeula --url https://myaccount.visualstudio.com --auth PAT --token <token> --pool default --agent myagent
+
+Unattend configuration for on-premise TFS with integrated (windows) and (Linux/OSX) negotiate authentication
+Win  : .\config.cmd --unattended --url http://mylocaltfsserver:8080/tfs --auth Integrated --pool default --agent myagent
+Unix : ./config.sh --unattended --acceptteeeula --url http://mylocaltfsserver:8080/tfs --auth Negotiate --username DOMAIN\USER_NAME --password MyPassword --pool default --agent myagent
+
+Unattend configuration for VSTS with PAT authentication and replace existing agent with same agent name
+Win  : .\config.cmd --unattended --url https://myaccount.visualstudio.com --auth PAT --token <token> --pool default --agent myagent --replace
+Unix : ./config.sh --unattended --acceptteeeula --url https://myaccount.visualstudio.com --auth PAT --token <token> --pool default --agent myagent --replace
+
+Unattend configuration for VSTS with PAT authentication and specify agent work directory
+Win  : .\config.cmd --unattended --url https://myaccount.visualstudio.com --auth PAT --token <token> --pool default --agent myagent --work D:\agent_work
+Unix : ./config.sh --unattended --acceptteeeula --url https://myaccount.visualstudio.com --auth PAT --token <token> --pool default --agent myagent --work usr/local/agent_work
+
+Unattend configuration for on-premise TFS with integrated authentication and configure agent as Windows service run as NetworkService
+Win  : .\config.cmd --unattended --url http://mylocaltfsserver:8080/tfs --auth Integrated --pool default --agent myagent --runasservice
+
+Unattend configuration for on-premise TFS with integrated authentication and configure agent as Windows service run as a domain account
+Win  : .\config.cmd --unattended --url http://mylocaltfsserver:8080/tfs --auth Integrated --pool default --agent myagent --runasservice --windowslogonaccount DOMAIN\USER_NAME --windowslogonpassword MyPassword
+
+Unattend unconfiguration for VSTS with PAT authentication
+Win  : .\config.cmd remove --unattended --auth PAT --token <token>
+Unix : ./config.sh remove --unattended --auth PAT --token <token>
+
+Unattend unconfiguration for on-premise TFS with integrated (windows) and (Linux/OSX) negotiate authentication
+Win  : .\config.cmd remove --unattended --auth Integrated
+Unix : ./config.sh remove --unattended --auth Negotiate --username DOMAIN\USER_NAME --password MyPassword

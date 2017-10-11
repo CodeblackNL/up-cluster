@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>bDhcpServer</id>
+    <version>0.2.0.0</version>
+    <authors>Codeblack</authors>
+    <owners>Codeblack</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Module with DSC Resources for DHCP Server area</description>
+    <releaseNotes />
+    <copyright>(c) 2014 Codeblack. All rights reserved.</copyright>
+    <tags>PSModule PSIncludes_DscResource PSDscResource_bDhcpServerConfigurationCompletion PSDscResource_bDhcpServerOption</tags>
+  </metadata>
+  <files>
+    <file src="**\*.*" target="" />
+  </files>
+</package>

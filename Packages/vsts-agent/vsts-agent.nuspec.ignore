@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>vsts-agent</id>
+    <version>2.112.0.1</version>
+    <authors>Codeblack</authors>
+    <owners>Codeblack</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>VSTS Agent</description>
+    <releaseNotes />
+    <copyright>(c) 2017 Codeblack. All rights reserved.</copyright>
+    <tags>vsts tfs agent</tags>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="scripts\**" target="scripts" />
+    <file src="files\**" target="files" />
+  </files>
+</package>

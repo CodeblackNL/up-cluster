@@ -7,7 +7,7 @@
 	[Parameter(Mandatory = $false)]
 	[string]$Filter,
 	[Parameter(Mandatory = $false)]
-	[string]$UnattendFilePath = (Join-Path -Path $PSScriptRoot -ChildPath '..\Provisioning.Disk\WdsClientUnattend\UP-STD-USB.xml')
+	[string]$UnattendFilePath = (Join-Path -Path $PSScriptRoot -ChildPath '..\Files.Disk\Provisioning\WdsClientUnattend\UP-STD-USB.xml')
 )
 
 $partition = Get-Partition -DriveLetter $Drive -ErrorAction SilentlyContinue
@@ -36,7 +36,7 @@ else {
     $imageFilter = '*_GUI.wim'
 }
 
-$imageFile = Get-ChildItem '..\Provisioning.Disk\Images' -Filter $imageFilter
+$imageFile = Get-ChildItem '..\Files.Disk\Provisioning\Images' -Filter $imageFilter
 if ($Filter) {
     $imageFile = $imageFile | Where-Object { $_.Name -match $Filter }
 }
